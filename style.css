@@ -72,9 +72,17 @@ body {
   font-size: 13px;
 }
 
+.nav a,
+.nav a:visited,
+.nav a:hover,
+.nav a:active,
+.nav a:focus {
+  text-decoration: none;
+}
+
 .nav a {
   color: rgba(242,242,242,.45);
-  transition: none;
+  transition: ease;
 }
 
 .nav a.active {
