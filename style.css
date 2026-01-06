@@ -146,24 +146,6 @@ body {
   font-size: 28px;
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 12px;
-}
-
-.gallery img {
-  grid-column: span 4;
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border-radius: 16px;
-  transition: transform .3s ease;
-}
-
-.gallery img:hover {
-  transform: scale(1.03);
-}
 
 /* footer */
 
@@ -439,3 +421,168 @@ body {
     grid-column: span 12;
   }
 }
+
+/* PORTFOLIO BACKGROUND */
+
+.portfolio-page {
+  background: var(--bg);
+}
+
+.portfolio-hero {
+  position: relative;
+  min-height: 100vh;
+}
+
+.portfolio-bg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  filter: saturate(0.95) contrast(1.02);
+}
+
+/* dark overlay for readability */
+.portfolio-hero::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(900px 700px at 20% 10%, rgba(0,0,0,0.20), rgba(0,0,0,0.80)),
+    linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.85));
+  pointer-events: none;
+}
+
+.portfolio-content {
+  position: relative;
+  z-index: 2;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+/* GALLERY: do not crop images */
+.gallery-contain {
+  margin-bottom: 40px;
+}
+
+.gallery-contain .shot {
+  grid-column: span 4;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(0,0,0,0.28);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  /* fade-in on scroll */
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+.gallery-contain .shot.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* key part: keep original aspect ratio, no crop */
+.gallery-contain .shot img {
+  width: 100%;
+  height: auto;      /* important: natural ratio */
+  display: block;
+  object-fit: contain; /* just in case */
+  background: transparent;
+}
+
+/* ===== Portfolio "stories" layout ===== */
+
+.story-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 40px;
+}
+
+.story {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 14px;
+  align-items: center;
+}
+
+.story.reverse {
+  grid-template-columns: 0.8fr 1.2fr;
+}
+
+.story.reverse .story-media {
+  order: 2;
+}
+
+.story.reverse .story-text {
+  order: 1;
+}
+
+/* media */
+.story-media {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(0,0,0,0.18);
+}
+
+.story-media img {
+  width: 100%;
+  height: auto;           /* НЕ обрізаємо */
+  display: block;
+  object-fit: contain;    /* зберігає пропорції */
+  background: rgba(0,0,0,0.10);
+}
+
+/* glass text card */
+.glass {
+  border-radius: 18px;
+  padding: 16px 16px;
+
+  background: rgba(0,0,0,0.28);
+  border: 1px solid rgba(255,255,255,0.10);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.story-text h2 {
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(242,242,242,.86);
+}
+
+.story-text p {
+  margin: 10px 0 0;
+  color: rgba(242,242,242,.72);
+  line-height: 1.6;
+  font-size: 13px;
+}
+
+.story-meta {
+  margin-top: 10px;
+  font-size: 12px;
+  color: rgba(242,242,242,.50);
+}
+
+/* Mobile: фото зверху, текст знизу */
+@media (max-width: 820px) {
+  .story,
+  .story.reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .story.reverse .story-media,
+  .story.reverse .story-text {
+    order: initial;
+  }
+}
+

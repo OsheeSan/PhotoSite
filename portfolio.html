@@ -8,42 +8,97 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
+<body class="portfolio-page">
 
 <header class="header">
   <div class="container header-inner">
-    <div class="logo">toshee</div>
+    <div class="logo">TOSHEE</div>
+
     <nav class="nav">
-      <nav class="nav">
-  <a href="index.html">Home</a>
-  <a href="portfolio.html" class="active">Portfolio</a>
-  <a href="contact.html">Contact</a>
-</nav>
+      <a href="index.html">Home</a>
+      <a href="portfolio.html" class="active">Portfolio</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </div>
 </header>
 
-<main class="container">
+<main class="portfolio-hero">
+  <img class="portfolio-bg" src="images/portfolio-bg.jpg" alt="" />
 
-  <section class="intro">
-    <h1>Portfolio</h1>
-    <p>Selected works.</p>
-  </section>
+  <div class="container portfolio-content">
+    <section class="intro">
+      <h1>Portfolio</h1>
+      <p>Обране...</p>
+    </section>
 
-  <section class="gallery">
-    <img src="images/first.jpg" loading="lazy">
-    <img src="images/02.jpg" loading="lazy">
-    <img src="images/03.jpg" loading="lazy">
-    <img src="images/04.jpg" loading="lazy">
-    <img src="images/05.jpg" loading="lazy">
-    <img src="images/06.jpg" loading="lazy">
-  </section>
+    <section class="story-list" id="work">
 
+  <article class="story">
+    <div class="story-media">
+      <img src="images/first.jpg" alt="" loading="lazy">
+    </div>
+    <div class="story-text glass">
+      <h2>Musician</h2>
+      <p>Той самий дідусь з Золотих воріт</p>
+      <div class="story-meta">Для статті в TyKyiv</div>
+    </div>
+  </article>
+
+  <article class="story reverse">
+    <div class="story-media">
+      <img src="images/02.jpg" alt="" loading="lazy">
+    </div>
+    <div class="story-text glass">
+      <h2>Travel</h2>
+      <p>Неймовірної краси жінки на острові Майя</p>
+      <div class="story-meta">Thailand • 2025</div>
+    </div>
+  </article>
+
+  <article class="story">
+    <div class="story-media">
+      <img src="images/04.jpg" alt="" loading="lazy">
+    </div>
+    <div class="story-text glass">
+      <h2>Babysitter</h2>
+      <p>Дитяча зацікавленість в кадрі</p>
+      <div class="story-meta">Xmas photoshoot</div>
+    </div>
+  </article>
+
+  <article class="story reverse">
+    <div class="story-media">
+      <img src="images/05.jpg" alt="" loading="lazy">
+    </div>
+    <div class="story-text glass">
+      <h2>Night shot</h2>
+      <p>Чистий силует, мінімум зайвого, фокус на людині.</p>
+      <div class="story-meta"></div>
+    </div>
+  </article>
+
+</section>
+
+
+    <footer class="footer">
+      © 2026 toshee
+    </footer>
+  </div>
 </main>
 
-<footer class="footer">
-  © 2026 toshee
-</footer>
+<script>
+  // Fade-in on scroll (the "reverse fade" you asked for)
+  const items = document.querySelectorAll(".shot");
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) e.target.classList.add("is-visible");
+    });
+  }, { threshold: 0.15 });
+
+  items.forEach((el) => io.observe(el));
+</script>
 
 </body>
+
 </html>
