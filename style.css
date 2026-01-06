@@ -184,3 +184,258 @@ body {
   .gallery img { grid-column: span 12; }
   .hero-text h1 { font-size: 24px; }
 }
+
+/* CONTACT PAGE */
+
+.contact-page {
+  background: var(--bg);
+}
+
+.contact-hero::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+
+  background:
+    radial-gradient(
+      900px 700px at 20% 10%,
+      rgba(0,0,0,0.25),
+      rgba(0,0,0,0.80)
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.35),
+      rgba(0,0,0,0.85)
+    );
+
+  pointer-events: none;
+}
+
+
+.contact-bg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+
+/* затемнение поверх фона */
+.contact-hero::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(900px 700px at 20% 10%, rgba(0,0,0,0.25), rgba(0,0,0,0.78)),
+    linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.85));
+  pointer-events: none;
+  z-index: 0;
+}
+
+.contact-content {
+  position: relative;
+  z-index: 2; /* ВАЖНО */
+  padding-top: 110px;
+  padding-bottom: 40px;
+}
+
+
+.contact-top {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.contact-box {
+  padding: 16px 18px;
+  border-radius: 18px;
+
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.10);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.contact-box h1 {
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: 0.5px;
+}
+
+.contact-box p {
+  margin-top: 10px;
+  color: rgba(242,242,242,.78);
+  line-height: 1.6;
+  max-width: 65ch;
+}
+
+
+.contact-title h1 {
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: 0.5px;
+}
+
+.contact-title p {
+  margin-top: 10px;
+  color: rgba(242,242,242,.78);
+  line-height: 1.6;
+  max-width: 65ch;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-pill {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+
+  padding: 12px 14px;
+  border-radius: 14px;
+
+  background: rgba(0,0,0,0.45);
+  border: 1px solid rgba(255,255,255,0.10);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  color: rgba(242,242,242,.92);
+  text-decoration: none;
+}
+
+.contact-pill span {
+  color: rgba(242,242,242,.55);
+}
+
+.services {
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.10);
+}
+
+.services-head h2 {
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(242,242,242,.75);
+}
+
+.services-head p {
+  margin-top: 10px;
+  color: rgba(242,242,242,.70);
+  line-height: 1.6;
+  max-width: 70ch;
+}
+
+.services-grid {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 12px;
+}
+
+.service-card {
+  grid-column: span 4;
+  overflow: hidden;
+  border-radius: 18px;
+
+  background: rgba(0,0,0,0.28);
+  border: 1px solid rgba(255,255,255,0.10);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.service-media {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.service-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.02);
+  transform: scale(1.02);
+}
+
+.service-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.10), rgba(0,0,0,0.55));
+}
+
+.service-body {
+  padding: 14px 14px 15px;
+}
+
+.service-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.service-row h3 {
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+}
+
+.price {
+  font-size: 13px;
+  color: rgba(242,242,242,.90);
+}
+
+.service-body p {
+  margin: 10px 0 0;
+  color: rgba(242,242,242,.70);
+  line-height: 1.6;
+  font-size: 13px;
+}
+
+.meta {
+  margin-top: 10px;
+  font-size: 12px;
+  color: rgba(242,242,242,.50);
+}
+
+.contact-footer {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,0.10);
+  color: rgba(242,242,242,.45);
+  font-size: 13px;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .contact-top {
+    grid-template-columns: 1fr;
+  }
+  .service-card {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 560px) {
+  .contact-content {
+    padding-top: 96px;
+  }
+  .service-card {
+    grid-column: span 12;
+  }
+}
