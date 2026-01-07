@@ -8,6 +8,50 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
+<script>
+  document.querySelectorAll(".media-switch").forEach(block => {
+    const gif = block.querySelector(".media-gif");
+
+    gif.addEventListener("load", () => {
+      block.classList.add("is-ready");
+    });
+  });
+</script>
+
+<audio id="bg-music" loop>
+  <source src="music/hozier-eat-your-young.mp3" type="audio/mpeg">
+</audio>
+
+<button id="sound-toggle" class="sound-btn">
+  Sound off
+</button>
+
+<script>
+  const audio = document.getElementById("bg-music");
+  const btn = document.getElementById("sound-toggle");
+
+  const isPlaying = localStorage.getItem("music") === "on";
+  if (isPlaying) {
+    audio.volume = 0.35;
+    audio.play().catch(() => {});
+    btn.textContent = "Sound on";
+  }
+
+  btn.addEventListener("click", () => {
+    if (audio.paused) {
+      audio.volume = 0.35;
+      audio.play();
+      btn.textContent = "Sound on";
+      localStorage.setItem("music", "on");
+    } else {
+      audio.pause();
+      btn.textContent = "Sound off";
+      localStorage.setItem("music", "off");
+    }
+  });
+</script>
+
+
 <body class="contact-page">
 
 <header class="header">
@@ -86,22 +130,31 @@
         </article>
 
         <!-- Video -->
-        <article class="service-card">
-          <div class="service-media">
-            <img src="images/service-video.jpg" alt="Video shooting" loading="lazy">
-          </div>
-          <div class="service-body">
-            <div class="service-row">
-              <h3>Відео-зйомка</h3>
-              <div class="price">₴3000</div>
-            </div>
-            <p>
-              60–90 хвилин. Коротке відео (Reels/TikTok/Cinematic) + колір/монтаж.
-              Включає камеру та дрон при необхідності.
-            </p>
-            <div class="meta">Формат: 9:16 / 16:9</div>
-          </div>
-        </article>
+        <article class="service-card video-service">
+  <div class="service-media media-switch">
+    <img
+      src="images/service-video.jpg"
+      alt="Video preview"
+      class="media-preview"
+    >
+    <img
+      src="images/service-video.gif"
+      alt="Video gif"
+      class="media-gif"
+    >
+  </div>
+
+  <div class="service-body">
+    <div class="service-row">
+      <h3>Відео зйомка</h3>
+      <div class="price">₴4500</div>
+    </div>
+    <p>
+      60–90 хвилин. Коротке відео (Reels/TikTok/Ciematic) + колір/монтаж.
+    </p>
+    <div class="meta">Формат: 9:16 / 16:9</div>
+  </div>
+</article>
       </div>
 
       <div class="container contact-content">

@@ -8,6 +8,40 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
+<audio id="bg-music" loop>
+  <source src="music/hozier-eat-your-young.mp3" type="audio/mpeg">
+</audio>
+
+<button id="sound-toggle" class="sound-btn">
+  Sound off
+</button>
+
+<script>
+  const audio = document.getElementById("bg-music");
+  const btn = document.getElementById("sound-toggle");
+
+  const isPlaying = localStorage.getItem("music") === "on";
+  if (isPlaying) {
+    audio.volume = 0.35;
+    audio.play().catch(() => {});
+    btn.textContent = "Sound on";
+  }
+
+  btn.addEventListener("click", () => {
+    if (audio.paused) {
+      audio.volume = 0.35;
+      audio.play();
+      btn.textContent = "Sound on";
+      localStorage.setItem("music", "on");
+    } else {
+      audio.pause();
+      btn.textContent = "Sound off";
+      localStorage.setItem("music", "off");
+    }
+  });
+</script>
+
+
 <body class="portfolio-page">
 
 <header class="header">
@@ -40,9 +74,17 @@
     <div class="story-text glass">
       <h2>Musician</h2>
       <p>Той самий дідусь з Золотих воріт</p>
-      <div class="story-meta">Для статті в TyKyiv</div>
+      <a
+  class="story-meta link"
+  href="https://tykyiv.com/istoriyi/uvaga-slukhachiv-moia-naibilsha-nagoroda-rozmova-z-vulichnim-muzikantom-shcho-graie-na-zolotikh-vorotakh/"
+  target="_blank"
+  rel="noopener"
+>
+  Для статті в TyKyiv
+</a>
     </div>
   </article>
+
 
   <article class="story reverse">
     <div class="story-media">

@@ -10,6 +10,40 @@
   <link rel="icon" href="/favicon.ico">
 </head>
 
+<audio id="bg-music" loop>
+  <source src="music/hozier-eat-your-young.mp3" type="audio/mpeg">
+</audio>
+
+<button id="sound-toggle" class="sound-btn">
+  Sound off
+</button>
+
+<script>
+  const audio = document.getElementById("bg-music");
+  const btn = document.getElementById("sound-toggle");
+
+  const isPlaying = localStorage.getItem("music") === "on";
+  if (isPlaying) {
+    audio.volume = 0.35;
+    audio.play().catch(() => {});
+    btn.textContent = "Sound on";
+  }
+
+  btn.addEventListener("click", () => {
+    if (audio.paused) {
+      audio.volume = 0.35;
+      audio.play();
+      btn.textContent = "Sound on";
+      localStorage.setItem("music", "on");
+    } else {
+      audio.pause();
+      btn.textContent = "Sound off";
+      localStorage.setItem("music", "off");
+    }
+  });
+</script>
+
+
 <body class="home">
 
 <header class="header overlay">
@@ -17,7 +51,7 @@
     <div class="logo">TOSHEE</div>
     <nav class="nav">
       <a href="portfolio.html">Portfolio</a>
-      <a href="contact.html">Contact</a>
+      <a href="contact.html">Services</a>
     </nav>
   </div>
 </header>
