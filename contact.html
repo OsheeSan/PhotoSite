@@ -8,16 +8,6 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<script>
-  document.querySelectorAll(".media-switch").forEach(block => {
-    const gif = block.querySelector(".media-gif");
-
-    gif.addEventListener("load", () => {
-      block.classList.add("is-ready");
-    });
-  });
-</script>
-
 <audio id="bg-music" loop>
   <source src="music/hozier-eat-your-young.mp3" type="audio/mpeg">
 </audio>
@@ -101,7 +91,7 @@
           <div class="service-body">
             <div class="service-row">
               <h3>Вулична зйомка</h3>
-              <div class="price">₴1500</div>
+              <div class="price">₴1499</div>
             </div>
             <p>
               60–90 хвилин, прогулянка по локаціям. Легка постановка + живі моменти.
@@ -119,7 +109,7 @@
           <div class="service-body">
             <div class="service-row">
               <h3>Студійна зйомка</h3>
-              <div class="price">₴2200</div>
+              <div class="price">₴2099</div>
             </div>
             <p>
               60 хв, світло/постановка під задачу. Допомагаю з позуванням та настроєм.
@@ -138,7 +128,7 @@
       class="media-preview"
     >
     <img
-      src="images/service-video.gif"
+      src="images/video.gif"
       alt="Video gif"
       class="media-gif"
     >
@@ -147,7 +137,7 @@
   <div class="service-body">
     <div class="service-row">
       <h3>Відео зйомка</h3>
-      <div class="price">₴4500</div>
+      <div class="price">₴2999</div>
     </div>
     <p>
       60–90 хвилин. Коротке відео (Reels/TikTok/Ciematic) + колір/монтаж.
@@ -174,4 +164,13 @@
 </main>
 
 </body>
+<script>
+  document.querySelectorAll(".media-switch").forEach(block => {
+    const gif = block.querySelector(".media-gif");
+
+    gif.addEventListener("load", () => {
+      block.classList.add("is-ready");
+    });
+  });
+</script>
 </html>
