@@ -172,11 +172,13 @@ body {
   }
 }
 
+.portfolio-page .story-media {
+  height: auto;
+}
 
-@media (max-width: 820px) {
-  .story-media {
-    height: 260px;
-  }
+.portfolio-page .story-media img {
+  height: auto;
+  object-fit: contain;
 }
 
 .hero-image {
@@ -619,6 +621,9 @@ body {
   object-fit: contain;    /* зберігає пропорції */
   background: rgba(0,0,0,0.10);
 }
+
+.story-media.fixed { height: 360px; }
+
 
 /* glass text card */
 .glass {
