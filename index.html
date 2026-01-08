@@ -4,68 +4,183 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>toshee</title>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <meta name="description" content="Photography — toshee.art" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="assets/favicon.ico">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RF58M9WJQR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RF58M9WJQR');
+  </script>
 </head>
-
-<audio id="bg-music" loop>
-  <source src="music/hozier-eat-your-young.mp3" type="audio/mpeg">
-</audio>
-
-<button id="sound-toggle" class="sound-btn">
-  Sound off
-</button>
-
-<script>
-  const audio = document.getElementById("bg-music");
-  const btn = document.getElementById("sound-toggle");
-
-  const isPlaying = localStorage.getItem("music") === "on";
-  if (isPlaying) {
-    audio.volume = 0.35;
-    audio.play().catch(() => {});
-    btn.textContent = "Sound on";
-  }
-
-  btn.addEventListener("click", () => {
-    if (audio.paused) {
-      audio.volume = 0.35;
-      audio.play();
-      btn.textContent = "Sound on";
-      localStorage.setItem("music", "on");
-    } else {
-      audio.pause();
-      btn.textContent = "Sound off";
-      localStorage.setItem("music", "off");
-    }
-  });
-</script>
-
 
 <body class="home">
 
-<header class="header overlay">
-  <div class="container header-inner">
-    <div class="logo">TOSHEE</div>
-    <nav class="nav">
-      <a href="portfolio.html">Portfolio</a>
-      <a href="contact.html">Services</a>
-    </nav>
-  </div>
-</header>
+  <!-- Background layers (fade between two photos) -->
+  <div class="bg-layer bg-hero" aria-hidden="true"></div>
+  <div class="bg-layer bg-about" aria-hidden="true"></div>
 
-<main class="hero">
-  <img src="images/main-bg.jpg" alt="" class="hero-image">
+  <header class="header overlay">
+    <div class="container header-inner">
+      <div class="logo">TOSHEE</div>
+      <nav class="nav">
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Services</a>
+      </nav>
+    </div>
+  </header>
 
-  <div class="hero-text">
-    <h1>photography</h1>
-    <p>
-      Kyiv street / studio
-    </p>
-  </div>
-</main>
+  <!-- HERO (first screen) -->
+  <main class="hero" id="hero">
+    <div class="hero-text">
+      <h1>photography</h1>
+      <p>Kyiv street / studio</p>
+    </div>
+  </main>
+
+  <!-- ABOUT STORIES (appear after scroll) -->
+  <section class="about-stories" id="about">
+    <div class="container">
+
+      <article class="story">
+        <div class="story-media media-switch">
+          <img src="assets/images/me-1.jpg" class="media-preview" alt="" loading="lazy">
+          <!-- <img src="assets/images/me-1.gif" class="media-gif" alt=""> -->
+        </div>
+        <div class="story-text glass">
+          <h2>2019</h2>
+          <p>Перші спроби зняти cinematic пародії</p>
+          <div class="story-meta">Вихід на Youtube</div>
+        </div>
+      </article>
+
+      <article class="story reverse">
+        <div class="story-media media-switch">
+          <img src="assets/images/me-2.jpg" class="media-preview" alt="" loading="lazy">
+          <!-- <img src="assets/images/me-2.gif" class="media-gif" alt=""> -->
+        </div>
+        <div class="story-text glass">
+          <h2>2020-2021</h2>
+          <p>Ніякого профіту, але зйомка та монтаж стали більш професіональні</p>
+          <div class="story-meta">Тисячі переглядів на YouTube</div>
+        </div>
+      </article>
+
+      <article class="story">
+        <div class="story-media media-switch">
+          <img src="assets/images/me-3.jpg" class="media-preview" alt="" loading="lazy">
+          <!-- <img src="assets/images/me-1.gif" class="media-gif" alt=""> -->
+        </div>
+        <div class="story-text glass">
+          <h2>2024</h2>
+          <p>Перші любительскі фотосесії</p>
+          <div class="story-meta"></div>
+        </div>
+      </article>
+
+      <article class="story reverse">
+        <div class="story-media media-switch">
+          <img src="assets/images/me-4.jpg" class="media-preview" alt="" loading="lazy">
+          <!-- <img src="assets/images/me-2.gif" class="media-gif" alt=""> -->
+        </div>
+        <div class="story-text glass">
+          <h2>2025</h2>
+          <p>Стрімкий розвиток. Зйомки з дрона, перша професіональна камера, робоча сторінка Instagram</p>
+          <div class="story-meta">Dji / Sony</div>
+        </div>
+      </article>
+
+      <article class="story">
+        <div class="story-media media-switch">
+          <img src="assets/images/me-5.jpg" class="media-preview" alt="" loading="lazy">
+          <!-- <img src="assets/images/me-1.gif" class="media-gif" alt=""> -->
+        </div>
+        <div class="story-text glass">
+          <h2>2026</h2>
+          <p>Запуск свого сайту</p>
+          <div class="story-meta">Далі більше</div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Music -->
+  <audio id="bg-music" loop>
+    <source src="assets/music/hozier-eat-your-young.mp3" type="audio/mpeg">
+  </audio>
+
+  <button id="sound-toggle" class="sound-btn" type="button">Sound on</button>
+
+  <script>
+    // ---- Hero -> About transition (fade hero out + switch background) ----
+    const hero = document.querySelector(".hero");
+    const about = document.querySelector(".about-stories");
+    const bgHero = document.querySelector(".bg-hero");
+    const bgAbout = document.querySelector(".bg-about");
+
+    // When ABOUT enters viewport, hide HERO and swap background
+    const heroSwap = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          hero.classList.add("fade-out");
+          about.classList.add("show");
+          bgHero.classList.add("hide");
+          bgAbout.classList.add("show");
+        } else {
+          hero.classList.remove("fade-out");
+          about.classList.remove("show");
+          bgHero.classList.remove("hide");
+          bgAbout.classList.remove("show");
+        }
+      });
+    }, { threshold: 0.15 });
+
+    heroSwap.observe(about);
+
+    // ---- Media switch: photo -> gif after gif fully loads ----
+    document.querySelectorAll(".media-switch").forEach(block => {
+      const gif = block.querySelector(".media-gif");
+      if (!gif) return;
+
+      if (gif.complete) {
+        block.classList.add("is-ready");
+      } else {
+        gif.addEventListener("load", () => block.classList.add("is-ready"));
+      }
+    });
+
+    // ---- Music toggle (remember state) ----
+    const audio = document.getElementById("bg-music");
+    const btn = document.getElementById("sound-toggle");
+
+    const setUi = () => {
+      btn.textContent = audio.paused ? "Sound on" : "Sound off";
+    };
+
+    const saved = localStorage.getItem("music") === "on";
+    if (saved) {
+      audio.volume = 0.35;
+      audio.play().catch(() => {});
+    }
+    setUi();
+
+    btn.addEventListener("click", () => {
+      if (audio.paused) {
+        audio.volume = 0.35;
+        audio.play().catch(() => {});
+        localStorage.setItem("music", "on");
+      } else {
+        audio.pause();
+        localStorage.setItem("music", "off");
+      }
+      setUi();
+    });
+  </script>
 
 </body>
 </html>

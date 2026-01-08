@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <title>Portfolio — toshee</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -19,7 +18,7 @@
 </script>
 
 <audio id="bg-music" loop>
-  <source src="music/hozier-eat-your-young.mp3" type="audio/mpeg">
+  <source src="assets/music/ak-gone.mp3" type="audio/mpeg">
 </audio>
 
 <button id="sound-toggle" class="sound-btn">
@@ -67,7 +66,7 @@
 </header>
 
 <main class="portfolio-hero">
-  <img class="portfolio-bg" src="images/portfolio-bg.jpg" alt="" />
+  <img class="portfolio-bg" src="assets/images/portfolio-bg.jpg" alt="" />
 
   <div class="container portfolio-content">
     <section class="intro">
@@ -79,7 +78,7 @@
 
   <article class="story">
     <div class="story-media">
-      <img src="images/first.jpg" alt="" loading="lazy">
+      <img src="assets/images/first.jpg" alt="" loading="lazy">
     </div>
     <div class="story-text glass">
       <h2>Musician</h2>
@@ -98,7 +97,7 @@
 
   <article class="story reverse">
     <div class="story-media">
-      <img src="images/02.jpg" alt="" loading="lazy">
+      <img src="assets/images/02.jpg" alt="" loading="lazy">
     </div>
     <div class="story-text glass">
       <h2>Travel</h2>
@@ -109,7 +108,7 @@
 
   <article class="story">
     <div class="story-media">
-      <img src="images/04.jpg" alt="" loading="lazy">
+      <img src="assets/images/04.jpg" alt="" loading="lazy">
     </div>
     <div class="story-text glass">
       <h2>Babysitter</h2>
@@ -120,7 +119,7 @@
 
   <article class="story reverse">
     <div class="story-media">
-      <img src="images/05.jpg" alt="" loading="lazy">
+      <img src="assets/images/05.jpg" alt="" loading="lazy">
     </div>
     <div class="story-text glass">
       <h2>Night shot</h2>
@@ -139,7 +138,6 @@
 </main>
 
 <script>
-  // Fade-in on scroll (the "reverse fade" you asked for)
   const items = document.querySelectorAll(".shot");
 
   const io = new IntersectionObserver((entries) => {
