@@ -118,7 +118,7 @@
           <div class="service-body">
             <div class="service-row">
               <h3>Студійна зйомка</h3>
-              <div class="price">₴2099</div>
+              <div class="price">₴1999</div>
             </div>
             <p>
               60 хв, світло/постановка під задачу. Допомагаю з позуванням та настроєм.
@@ -140,14 +140,14 @@
 
   <video
     class="media-video"
-    autoplay
     muted
     loop
     playsinline
-    preload="metadata"
+    preload="auto"
   >
     <source src="assets/videos/service-video.mp4" type="video/mp4">
   </video>
+</div>
 </div>
 
   <div class="service-body">
@@ -156,7 +156,7 @@
       <div class="price">₴2999</div>
     </div>
     <p>
-      60–90 хвилин. Коротке відео (Reels/TikTok/Cinematic) + колір/монтаж.
+      Коротке відео 1-3хв (Reels/TikTok/Cinematic) + колір/монтаж.
     </p>
     <div class="meta">Включає зйомку дроном</div>
   </div>
@@ -185,16 +185,19 @@
     const video = block.querySelector(".media-video");
     if (!video) return;
 
-    const ready = () => block.classList.add("is-ready");
+    const startVideo = () => {
+      video.play().then(() => {
+        block.classList.add("is-ready");
+      }).catch(() => {
+        console.warn("Video autoplay blocked");
+      });
+    };
 
-    if (video.readyState >= 2) {
-      ready(); // уже есть первый кадр (кэш)
+    if (video.readyState >= 4) {
+      startVideo();
     } else {
-      video.addEventListener("loadeddata", ready, { once: true });
+      video.addEventListener("canplaythrough", startVideo, { once: true });
     }
-
-    // На всякий случай: попытаться стартануть
-    video.play().catch(() => {});
   });
 </script>
 </html>
