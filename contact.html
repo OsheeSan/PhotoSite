@@ -131,17 +131,24 @@
         <!-- Video -->
         <article class="service-card video-service">
   <div class="service-media media-switch">
-    <img
-      src="assets/images/service-video.jpg"
-      alt="Video preview"
-      class="media-preview"
-    >
-    <img
-      src="assets/images/video.gif"
-      alt="Video gif"
-      class="media-gif"
-    >
-  </div>
+  <img
+    src="assets/images/service-video.jpg"
+    alt="Video preview"
+    class="media-preview"
+    loading="lazy"
+  >
+
+  <video
+    class="media-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+  >
+    <source src="assets/videos/service-video.mp4" type="video/mp4">
+  </video>
+</div>
 
   <div class="service-body">
     <div class="service-row">
@@ -175,11 +182,19 @@
 </body>
 <script>
   document.querySelectorAll(".media-switch").forEach(block => {
-    const gif = block.querySelector(".media-gif");
+    const video = block.querySelector(".media-video");
+    if (!video) return;
 
-    gif.addEventListener("load", () => {
-      block.classList.add("is-ready");
-    });
+    const ready = () => block.classList.add("is-ready");
+
+    if (video.readyState >= 2) {
+      ready(); // уже есть первый кадр (кэш)
+    } else {
+      video.addEventListener("loadeddata", ready, { once: true });
+    }
+
+    // На всякий случай: попытаться стартануть
+    video.play().catch(() => {});
   });
 </script>
 </html>
