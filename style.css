@@ -101,12 +101,12 @@ body {
 }
 
 .bg-hero{
-  background-image: url("assets/images/bg-main.jpg");
+  background-image: url("assets/images/main/bg-main.jpg");
   opacity: 1;
 }
 
 .bg-about{
-  background-image: url("assets/images/bg-about.jpg");
+  background-image: url("assets/images/main/bg-about.jpg");
   opacity: 0;
 }
 
