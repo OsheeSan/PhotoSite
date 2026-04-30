@@ -5,89 +5,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portfolio — toshee</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/favicon.ico">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RF58M9WJQR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RF58M9WJQR');
+  </script>
 </head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RF58M9WJQR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-RF58M9WJQR');
-</script>
-
-<audio id="bg-music" loop>
-  <source src="assets/music/ak-gone.mp3" type="audio/mpeg">
-</audio>
-
-<button id="sound-toggle" class="sound-btn">
-  Sound off
-</button>
-
-<script>
-  const audio = document.getElementById("bg-music");
-  const btn = document.getElementById("sound-toggle");
-
-  const isPlaying = localStorage.getItem("music") === "on";
-  if (isPlaying) {
-    audio.volume = 0.35;
-    audio.play().catch(() => {});
-    btn.textContent = "Sound on";
-  }
-
-  btn.addEventListener("click", () => {
-    if (audio.paused) {
-      audio.volume = 0.35;
-      audio.play();
-      btn.textContent = "Sound on";
-      localStorage.setItem("music", "on");
-    } else {
-      audio.pause();
-      btn.textContent = "Sound off";
-      localStorage.setItem("music", "off");
-    }
-  });
-</script>
-
 
 <body class="portfolio-page">
 
-<header class="header">
+<header class="header anim-slideDown">
   <div class="container header-inner">
     <div class="logo">TOSHEE</div>
 
     <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="portfolio.html" class="active">Portfolio</a>
-      <a href="contact.html">Services</a>
+      <a href="index.html" data-i18n="nav.home">Головна</a>
+      <a href="portfolio.html" class="active" data-i18n="nav.portfolio">Портфоліо</a>
+      <a href="blog.html" data-i18n="nav.blog">Блог</a>
+      <a href="contact.html" data-i18n="nav.services">Послуги</a>
     </nav>
+
+    <div class="header-controls">
+      <div class="lang-switch">
+        <button data-lang="en">EN</button>
+        <button data-lang="ua" class="active">UA</button>
+      </div>
+    </div>
   </div>
 </header>
+
+<button class="theme-btn" aria-label="Toggle theme"></button>
 
 <main class="portfolio-hero">
   <img class="portfolio-bg" src="assets/images/portfolio-bg.jpg" alt="" />
 
   <div class="container portfolio-content">
-    <section class="intro">
-      <h1>Portfolio</h1>
-      <p>Обране...</p>
+    <section class="intro anim-fadeInUp">
+      <h1 data-i18n="port.title">Портфоліо</h1>
+      <p data-i18n="port.subtitle">Обране...</p>
     </section>
 
     <section class="story-list" id="work">
 
-  <article class="story">
+  <article class="story anim-on-scroll">
     <div class="story-media">
       <img src="assets/images/port01.jpg" alt="" loading="lazy">
     </div>
     <div class="story-text glass">
-      <h2>Musician</h2>
-      <p>Той самий дідусь з Золотих воріт</p>
+      <h2 data-i18n="port1.title">Musician</h2>
+      <p data-i18n="port1.text">Той самий дідусь з Золотих воріт</p>
       <a
   class="story-meta link"
   href="https://tykyiv.com/istoriyi/uvaga-slukhachiv-moia-naibilsha-nagoroda-rozmova-z-vulichnim-muzikantom-shcho-graie-na-zolotikh-vorotakh/"
   target="_blank"
   rel="noopener"
+  data-i18n="port1.meta"
 >
   Для статті в TyKyiv
 </a>
@@ -95,110 +72,110 @@
   </article>
 
 
-  <article class="story reverse">
+  <article class="story reverse anim-on-scroll">
     <div class="story-media">
       <img src="assets/images/port02.jpg" alt="" loading="lazy">
     </div>
     <div class="story-text glass">
-      <h2>Travel</h2>
-      <p>Неймовірної краси жінки на острові Майя</p>
-      <div class="story-meta">Thailand • 2025</div>
+      <h2 data-i18n="port2.title">Travel</h2>
+      <p data-i18n="port2.text">Неймовірної краси жінки на острові Майя</p>
+      <div class="story-meta" data-i18n="port2.meta">Thailand • 2025</div>
     </div>
   </article>
 
-  <article class="story">
+  <article class="story anim-on-scroll">
     <div class="story-media">
       <img src="assets/images/port04.jpg" alt="" loading="lazy">
     </div>
     <div class="story-text glass">
-      <h2>Babysitter</h2>
-      <p>Дитяча зацікавленість в кадрі</p>
-      <div class="story-meta">Xmas photoshoot</div>
+      <h2 data-i18n="port3.title">Babysitter</h2>
+      <p data-i18n="port3.text">Дитяча зацікавленість в кадрі</p>
+      <div class="story-meta" data-i18n="port3.meta">Xmas photoshoot</div>
     </div>
   </article>
 
-  <article class="story reverse">
+<article class="story reverse anim-on-scroll">
     <div class="story-media">
-      <img src="assets/images/port05.jpg" alt="" loading="lazy">
+      <img src="assets/images/port13.jpg" alt="" loading="lazy">
     </div>
     <div class="story-text glass">
-      <h2>Night shot</h2>
-      <p>Чистий силует, мінімум зайвого</p>
+      <h2 data-i18n="port4.title">Love Story</h2>
+      <p data-i18n="port4.text">Лиш вони в цьому моменті</p>
       <div class="story-meta"></div>
     </div>
   </article>
 
-  <article class="story">
+  <article class="story anim-on-scroll">
     <div class="story-media">
       <img src="assets/images/port06.jpg" alt="" loading="lazy">
     </div>
     <div class="story-text glass">
-      <h2>Beginning</h2>
-      <p>Початок нової історії</p>
-      <div class="story-meta">Baby photoshoot</div>
+      <h2 data-i18n="port5.title">Beginning</h2>
+      <p data-i18n="port5.text">Початок нової історії</p>
+      <div class="story-meta" data-i18n="port5.meta">Baby photoshoot</div>
     </div>
   </article>
 
-  <article class="story reverse">
+  <article class="story reverse anim-on-scroll">
     <div class="story-media">
       <img src="assets/images/port07.jpg" alt="" loading="lazy">
     </div>
     <div class="story-text glass">
-      <h2>Beauty</h2>
-      <p>Бачили б ви її погляд</p>
+      <h2 data-i18n="port6.title">Beauty</h2>
+      <p data-i18n="port6.text">Бачили б ви її погляд</p>
       <div class="story-meta"></div>
     </div>
   </article>
 
-  <article class="story">
+  <article class="story anim-on-scroll">
     <div class="story-media">
       <img src="assets/images/port08.jpg" alt="" loading="lazy">
     </div>
     <div class="story-text glass">
-      <h2>Happines</h2>
-      <p>Живі фотографії - must have</p>
+      <h2 data-i18n="port7.title">Happines</h2>
+      <p data-i18n="port7.text">Живі фотографії - must have</p>
     </div>
   </article>
 
-  <article class="story reverse">
+  <article class="story reverse anim-on-scroll">
     <div class="story-media">
       <img src="assets/images/port09.jpg" alt="" loading="lazy">
     </div>
     <div class="story-text glass">
-      <h2>Action</h2>
-      <p>В моменті</p>
+      <h2 data-i18n="port8.title">Action</h2>
+      <p data-i18n="port8.text">В моменті</p>
       <div class="story-meta"></div>
     </div>
   </article>
 
-  <article class="story">
+  <article class="story anim-on-scroll">
     <div class="story-media">
       <img src="assets/images/port10.jpg" alt="" loading="lazy">
     </div>
     <div class="story-text glass">
-      <h2>Beach calm</h2>
-      <p>Любування океаном</p>
+      <h2 data-i18n="port9.title">Beach calm</h2>
+      <p data-i18n="port9.text">Любування океаном</p>
     </div>
   </article>
 
-  <article class="story reverse">
+  <article class="story reverse anim-on-scroll">
     <div class="story-media">
       <img src="assets/images/port11.jpg" alt="" loading="lazy">
     </div>
     <div class="story-text glass">
-      <h2>Monkey</h2>
-      <p>Клієнт залишився задоволеним фотографіями</p>
+      <h2 data-i18n="port10.title">Monkey</h2>
+      <p data-i18n="port10.text">Клієнт залишився задоволеним фотографіями</p>
       <div class="story-meta"></div>
     </div>
   </article>
 
-  <article class="story">
+  <article class="story anim-on-scroll">
     <div class="story-media">
       <img src="assets/images/port12.jpg" alt="" loading="lazy">
     </div>
     <div class="story-text glass">
-      <h2>Spring</h2>
-      <p>Daniel Spring</p>
+      <h2 data-i18n="port11.title">Spring</h2>
+      <p data-i18n="port11.text">Daniel Spring</p>
     </div>
   </article>
 
@@ -211,12 +188,16 @@
   </div>
 </main>
 
+<script src="i18n.js"></script>
 <script>
-  const items = document.querySelectorAll(".shot");
+  const items = document.querySelectorAll(".story.anim-on-scroll");
 
   const io = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
-      if (e.isIntersecting) e.target.classList.add("is-visible");
+      if (e.isIntersecting) {
+        e.target.classList.add("is-visible");
+        io.unobserve(e.target);
+      }
     });
   }, { threshold: 0.15 });
 

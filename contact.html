@@ -1,86 +1,63 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Services — toshee</title>
   <meta name="description" content="Contact — Telegram, Instagram. Services & pricing." />
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/favicon.ico">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RF58M9WJQR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RF58M9WJQR');
+  </script>
 </head>
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RF58M9WJQR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-RF58M9WJQR');
-</script>
-
-<audio id="bg-music" loop>
-  <source src="assets/music/grandson-best_friends.mp3" type="audio/mpeg">
-</audio>
-
-<button id="sound-toggle" class="sound-btn">
-  Sound off
-</button>
-
-<script>
-  const audio = document.getElementById("bg-music");
-  const btn = document.getElementById("sound-toggle");
-
-  const isPlaying = localStorage.getItem("music") === "on";
-  if (isPlaying) {
-    audio.volume = 0.35;
-    audio.play().catch(() => {});
-    btn.textContent = "Sound on";
-  }
-
-  btn.addEventListener("click", () => {
-    if (audio.paused) {
-      audio.volume = 0.35;
-      audio.play();
-      btn.textContent = "Sound on";
-      localStorage.setItem("music", "on");
-    } else {
-      audio.pause();
-      btn.textContent = "Sound off";
-      localStorage.setItem("music", "off");
-    }
-  });
-</script>
-
 
 <body class="contact-page">
 
-<header class="header">
+<header class="header anim-slideDown">
   <div class="container header-inner">
     <div class="logo">TOSHEE</div>
 
     <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="contact.html" class="active">Services</a>
+      <a href="index.html" data-i18n="nav.home">Головна</a>
+      <a href="portfolio.html" data-i18n="nav.portfolio">Портфоліо</a>
+      <a href="blog.html" data-i18n="nav.blog">Блог</a>
+      <a href="contact.html" class="active" data-i18n="nav.services">Послуги</a>
     </nav>
+
+    <div class="header-controls">
+      <div class="lang-switch">
+        <button data-lang="en">EN</button>
+        <button data-lang="ua" class="active">UA</button>
+      </div>
+    </div>
   </div>
 </header>
+
+<button class="theme-btn" aria-label="Toggle theme"></button>
 
 <main class="contact-hero">
   <!-- Background -->
   <img class="contact-bg" src="assets/images/contact-bg.jpg" alt="" />
 
   <div class="container contact-content">
-    <div class="contact-top">
+    <div class="contact-top anim-fadeInUp">
       <div class="contact-box">
-        <h1>Contact</h1>
-        <p>Основне спілкування — в Telegram. Instagram — для прикладів та відміток.</p>
+        <h1 data-i18n="contact.title">Contact</h1>
+        <p data-i18n="contact.text">Основне спілкування — в Telegram. Instagram — для прикладів та відміток.</p>
       </div>
 
       <div class="contact-links">
-        <a class="contact-pill" href="https://t.me/oshee_tech" target="_blank" rel="noopener">
+        <a class="contact-pill anim-on-scroll" href="https://t.me/oshee_tech" target="_blank" rel="noopener">
           Telegram <span>@oshee_tech</span>
         </a>
-        <a class="contact-pill" href="https://instagram.com/oshee____" target="_blank" rel="noopener">
+        <a class="contact-pill anim-on-scroll" href="https://instagram.com/oshee____" target="_blank" rel="noopener">
           Instagram <span>@oshee____</span>
         </a>
       </div>
@@ -88,90 +65,85 @@
 
     <section class="services">
       <div class="services-head">
-        <h2>Services</h2>
+        <h2 data-i18n="services.title">Послуги</h2>
       </div>
 
       <div class="services-grid">
         <!-- Street -->
-        <article class="service-card">
+        <article class="service-card anim-on-scroll">
           <div class="service-media">
             <img src="assets/images/service-street.jpg" alt="Street photography" loading="lazy">
           </div>
           <div class="service-body">
             <div class="service-row">
-              <h3>Вулична зйомка</h3>
-              <div class="price">₴1499</div>
+              <h3 data-i18n="service1.name">Вулична зйомка</h3>
+              <div class="price" data-i18n="service1.price">₴1499</div>
             </div>
-            <p>
+            <p data-i18n="service1.desc">
               60–90 хвилин, прогулянка по локаціям. Легка постановка + живі моменти.
               25–30 оброблених фото + оригінали
             </p>
-            <div class="meta">Готовність: 3–5 дні</div>
+            <div class="meta" data-i18n="service1.meta">Готовність: 3–5 дні</div>
           </div>
         </article>
 
         <!-- Studio -->
-        <article class="service-card">
+        <article class="service-card anim-on-scroll">
           <div class="service-media">
             <img src="assets/images/service-studio.jpg" alt="Studio photography" loading="lazy">
           </div>
           <div class="service-body">
             <div class="service-row">
-              <h3>Студійна зйомка</h3>
-              <div class="price">₴1999</div>
+              <h3 data-i18n="service2.name">Студійна зйомка</h3>
+              <div class="price" data-i18n="service2.price">₴1999</div>
             </div>
-            <p>
+            <p data-i18n="service2.desc">
               60 хв, світло/постановка під задачу. Приклади студій надаю.
               25–30 оброблених фото  + оригінали
             </p>
-            <div class="meta">Студія оплачується окремо</div>
+            <div class="meta" data-i18n="service2.meta">Студія оплачується окремо</div>
           </div>
         </article>
 
         <!-- Video -->
-        <article class="service-card video-service">
+        <article class="service-card video-service anim-on-scroll">
+          <div class="service-media media-switch">
+            <img
+              src="assets/images/service-video.jpg"
+              alt="Video preview"
+              class="media-preview"
+              loading="lazy"
+            >
+            <video
+              class="media-video"
+              muted
+              loop
+              playsinline
+              preload="auto"
+            >
+              <source src="https://pub-0908749162f84bf7bae4414a5ee49ca2.r2.dev/videos/service-video.mp4" type="video/mp4">
+            </video>
+          </div>
 
-  <div class="service-media media-switch">
-  <img
-    src="assets/images/service-video.jpg"
-    alt="Video preview"
-    class="media-preview"
-    loading="lazy"
-  >
-
-  <video
-    class="media-video"
-    muted
-    loop
-    playsinline
-    preload="auto"
-  >
-    <source src="assets/videos/service-video.mp4" type="video/mp4">
-  </video>
-</div>
-
-
-  <div class="service-body">
-    <div class="service-row">
-      <h3>Відео зйомка</h3>
-      <div class="price">₴2499</div>
-    </div>
-    <p>
-      Коротке відео 1-3хв + колір/монтаж.
-    </p>
-    <div class="meta">Reels/TikTok/Cinematic</div>
-  </div>
-</article>
+          <div class="service-body">
+            <div class="service-row">
+              <h3 data-i18n="service3.name">Відео зйомка</h3>
+              <div class="price" data-i18n="service3.price">₴2499</div>
+            </div>
+            <p data-i18n="service3.desc">
+              Коротке відео 1-3хв + колір/монтаж.
+            </p>
+            <div class="meta" data-i18n="service3.meta">Reels/TikTok/Cinematic</div>
+          </div>
+        </article>
       </div>
+    </section>
 
-      <div class="container contact-content">
-    <div class="contact-top">
+    <section class="disclaimer anim-fadeInUp">
       <div class="contact-box">
-        <h1>Дисклеймер</h1>
-        <p>З часом ціни зростуть хо-хо-хо</p>
+        <h2 data-i18n="disclaimer.title">Дисклеймер</h2>
+        <p data-i18n="disclaimer.text">З часом ціни зростуть хо-хо-хо</p>
       </div>
-    </div>
-
     </section>
 
     <footer class="contact-footer">
@@ -180,8 +152,9 @@
   </div>
 </main>
 
-</body>
+<script src="i18n.js"></script>
 <script>
+  // Video autoplay
   document.querySelectorAll(".media-switch").forEach(block => {
     const video = block.querySelector(".media-video");
     if (!video) return;
@@ -200,6 +173,20 @@
       video.addEventListener("canplaythrough", startVideo, { once: true });
     }
   });
+
+  // Scroll animations
+  const scrollItems = document.querySelectorAll(".anim-on-scroll");
+  const scrollObs = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add("is-visible");
+        scrollObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  scrollItems.forEach((el) => scrollObs.observe(el));
 </script>
 
+</body>
 </html>

@@ -20,25 +20,35 @@
 
 <body class="home">
 
-  <!-- Background layers (fade between two photos) -->
-  <div class="bg-layer bg-hero" aria-hidden="true"></div>
+  <!-- Hero background photo -->
+  <img class="bg-layer bg-hero-img show" src="assets/images/main/bg-main.jpg" alt="" />
   <div class="bg-layer bg-about" aria-hidden="true"></div>
 
-  <header class="header overlay">
+  <header class="header overlay anim-slideDown">
     <div class="container header-inner">
       <div class="logo">TOSHEE</div>
       <nav class="nav">
-        <a href="portfolio.html">Portfolio</a>
-        <a href="contact.html">Services</a>
+        <a href="index.html" class="active" data-i18n="nav.home">Головна</a>
+        <a href="portfolio.html" data-i18n="nav.portfolio">Портфоліо</a>
+        <a href="blog.html" data-i18n="nav.blog">Блог</a>
+        <a href="contact.html" data-i18n="nav.services">Послуги</a>
       </nav>
+      <div class="header-controls">
+        <div class="lang-switch">
+          <button data-lang="en">EN</button>
+          <button data-lang="ua" class="active">UA</button>
+        </div>
+      </div>
     </div>
   </header>
 
+  <button class="theme-btn" aria-label="Toggle theme"></button>
+
   <!-- HERO (first screen) -->
   <main class="hero" id="hero">
-    <div class="hero-text">
-      <h1>photography</h1>
-      <p>Kyiv street / studio</p>
+    <div class="hero-text anim-fadeInUp">
+      <h1 data-i18n="hero.title">фотографія</h1>
+      <p data-i18n="hero.subtitle">Київ вулиця / студія</p>
     </div>
   </main>
 
@@ -46,84 +56,72 @@
   <section class="about-stories" id="about">
     <div class="container">
 
-      <article class="story">
+      <article class="story anim-on-scroll">
         <div class="story-media media-switch">
           <img src="assets/images/main/me-1.jpg" class="media-preview" alt="" loading="lazy">
-          <!-- <img src="assets/images/me-1.gif" class="media-gif" alt=""> -->
         </div>
         <div class="story-text glass">
-          <h2>2019</h2>
-          <p>Перші спроби зняти cinematic пародії</p>
-          <div class="story-meta">Вихід на Youtube</div>
+          <h2 data-i18n="story1.year">2019</h2>
+          <p data-i18n="story1.text">Перші спроби зняти cinematic пародії</p>
+          <div class="story-meta" data-i18n="story1.meta">Вихід на Youtube</div>
         </div>
       </article>
 
-      <article class="story reverse">
+      <article class="story reverse anim-on-scroll">
         <div class="story-media media-switch">
           <img src="assets/images/main/me-2.jpg" class="media-preview" alt="" loading="lazy">
-          <!-- <img src="assets/images/me-2.gif" class="media-gif" alt=""> -->
         </div>
         <div class="story-text glass">
-          <h2>2020-2021</h2>
-          <p>Ніякого профіту, але зйомка та монтаж стали більш професіональні</p>
-          <div class="story-meta">Тисячі переглядів на YouTube</div>
+          <h2 data-i18n="story2.year">2020-2021</h2>
+          <p data-i18n="story2.text">Ніякого профіту, але зйомка та монтаж стали більш професіональні</p>
+          <div class="story-meta" data-i18n="story2.meta">Тисячі переглядів на YouTube</div>
         </div>
       </article>
 
-      <article class="story">
+      <article class="story anim-on-scroll">
         <div class="story-media media-switch">
           <img src="assets/images/main/me-3.jpg" class="media-preview" alt="" loading="lazy">
-          <!-- <img src="assets/images/me-1.gif" class="media-gif" alt=""> -->
         </div>
         <div class="story-text glass">
-          <h2>2024</h2>
-          <p>Перші любительскі фотосесії</p>
+          <h2 data-i18n="story3.year">2024</h2>
+          <p data-i18n="story3.text">Перші любительскі фотосесії</p>
           <div class="story-meta"></div>
         </div>
       </article>
 
-      <article class="story reverse">
+      <article class="story reverse anim-on-scroll">
         <div class="story-media media-switch">
           <img src="assets/images/main/me-4.jpg" class="media-preview" alt="" loading="lazy">
-          <!-- <img src="assets/images/me-2.gif" class="media-gif" alt=""> -->
         </div>
         <div class="story-text glass">
-          <h2>2025</h2>
-          <p>Стрімкий розвиток. Зйомки з дрона, перша професіональна камера, робоча сторінка Instagram</p>
-          <div class="story-meta">Dji / Sony</div>
+          <h2 data-i18n="story4.year">2025</h2>
+          <p data-i18n="story4.text">Стрімкий розвиток. Зйомки з дрона, перша професіональна камера, робоча сторінка Instagram</p>
+          <div class="story-meta" data-i18n="story4.meta">Dji / Sony</div>
         </div>
       </article>
 
-      <article class="story">
+      <article class="story anim-on-scroll">
         <div class="story-media media-switch">
           <img src="assets/images/main/me-5.jpg" class="media-preview" alt="" loading="lazy">
-          <!-- <img src="assets/images/me-1.gif" class="media-gif" alt=""> -->
         </div>
         <div class="story-text glass">
-          <h2>2026</h2>
-          <p>Запуск свого сайту</p>
-          <div class="story-meta">Далі більше</div>
+          <h2 data-i18n="story5.year">2026</h2>
+          <p data-i18n="story5.text">Запуск свого сайту</p>
+          <div class="story-meta" data-i18n="story5.meta">Далі більше</div>
         </div>
       </article>
 
     </div>
   </section>
 
-  <!-- Music -->
-  <audio id="bg-music" loop>
-    <source src="assets/music/hozier-eat-your-young.mp3" type="audio/mpeg">
-  </audio>
-
-  <button id="sound-toggle" class="sound-btn" type="button">Sound on</button>
-
+  <script src="i18n.js"></script>
   <script>
     // ---- Hero -> About transition (fade hero out + switch background) ----
     const hero = document.querySelector(".hero");
     const about = document.querySelector(".about-stories");
-    const bgHero = document.querySelector(".bg-hero");
+    const bgHero = document.querySelector(".bg-hero-img");
     const bgAbout = document.querySelector(".bg-about");
 
-    // When ABOUT enters viewport, hide HERO and swap background
     const heroSwap = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
         if (e.isIntersecting) {
@@ -154,32 +152,19 @@
       }
     });
 
-    // ---- Music toggle (remember state) ----
-    const audio = document.getElementById("bg-music");
-    const btn = document.getElementById("sound-toggle");
+    // ---- Scroll animations ----
+    const scrollItems = document.querySelectorAll(".anim-on-scroll");
+    const scrollObs = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          e.target.style.animationDelay = `${i * 0.1}s`;
+          e.target.classList.add("is-visible");
+          scrollObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
 
-    const setUi = () => {
-      btn.textContent = audio.paused ? "Sound on" : "Sound off";
-    };
-
-    const saved = localStorage.getItem("music") === "on";
-    if (saved) {
-      audio.volume = 0.35;
-      audio.play().catch(() => {});
-    }
-    setUi();
-
-    btn.addEventListener("click", () => {
-      if (audio.paused) {
-        audio.volume = 0.35;
-        audio.play().catch(() => {});
-        localStorage.setItem("music", "on");
-      } else {
-        audio.pause();
-        localStorage.setItem("music", "off");
-      }
-      setUi();
-    });
+    scrollItems.forEach((el) => scrollObs.observe(el));
   </script>
 
 </body>
