@@ -83,7 +83,8 @@ const translations = {
     "blog.howdeep": "Mitski - How Deep Is Your Love cover",
     "blog.intheend": "Linkin Park - In The End cover",
     "blog.podboom": "P.O.D. - Boom cover",
-    "blog.rightround": "Alvin And The Chipmunks - You Spin Me Round cover"
+    "blog.rightround": "Alvin And The Chipmunks - You Spin Me Round cover",
+    "blog.tulipandgoats": "Lost in tulips, found by goats"
   },
   ua: {
     "nav.home": "Головна",
@@ -169,7 +170,8 @@ const translations = {
     "blog.howdeep": "Кавер на Mitski - How Deep Is Your Love",
     "blog.intheend": "Кавер на Linkin Park - In The End",
     "blog.podboom": "Кавер на P.O.D. - Boom",
-    "blog.rightround": "Кавер на Alvin And The Chipmunks - You Spin Me Round"
+    "blog.rightround": "Кавер на Alvin And The Chipmunks - You Spin Me Round",
+    "blog.tulipandgoats": "Загубилась серед тюльпанів, знайдена козами"
   }
 };
 
