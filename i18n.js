@@ -72,8 +72,7 @@ const translations = {
     "service3.desc": "Short video 1-3min + color/editing.",
     "service3.meta": "Reels/TikTok/Cinematic",
     // blog.html
-    "blog.title": "Video Works",
-    "blog.subtitle": "Editing & color grading",
+    "blog.title": "Blog",
     "blog.thailand": "Trip to Thailand",
     "blog.moto": "Weekend on motorcycles",
     "blog.walkby": "A walk with a Threads star",
