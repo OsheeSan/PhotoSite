@@ -84,7 +84,7 @@ const translations = {
     "blog.intheend": "Linkin Park - In The End cover",
     "blog.podboom": "P.O.D. - Boom cover",
     "blog.rightround": "Alvin And The Chipmunks - You Spin Me Round cover",
-    "blog.tulipandgoats": "Lost in tulips, found by goats"
+    "blog.tulipandgoats": "Lost in tulips"
   },
   ua: {
     "nav.home": "Головна",
@@ -171,7 +171,7 @@ const translations = {
     "blog.intheend": "Кавер на Linkin Park - In The End",
     "blog.podboom": "Кавер на P.O.D. - Boom",
     "blog.rightround": "Кавер на Alvin And The Chipmunks - You Spin Me Round",
-    "blog.tulipandgoats": "Загубилась серед тюльпанів, знайдена козами"
+    "blog.tulipandgoats": "Загубилась серед тюльпанів"
   }
 };
 
